@@ -5,7 +5,7 @@
     <title>ClippyJS Online</title>
 
     <!-- ClippyJS CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smore-inc/clippyjs@1.0.0/clippy.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/clippyjs/clippy.css">
 
     <style>
         body {
@@ -18,12 +18,12 @@
 <body>
 
     <!-- ClippyJS -->
-    <script src="https://cdn.jsdelivr.net/gh/smore-inc/clippyjs@1.0.0/clippy.min.js"></script>
+    <script src="https://s3.amazonaws.com/clippyjs/clippy.js"></script>
 
     <script>
         clippy.load('Clippy', function(agent) {
             agent.show();
-            agent.moveTo(300, 300); // posición en pantalla
+            agent.moveTo(300, 300); // posición inicial en pantalla
 
             setTimeout(() => {
                 agent.speak("¡Hola! Parece que estás intentando hacer una animación.");
