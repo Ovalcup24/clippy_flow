@@ -9,7 +9,7 @@
 
     <style>
         body {
-            background: #1e90ff; /* azul Windows XP */
+            background: #1e90ff; /* azul XP */
             height: 100vh;
             margin: 0;
         }
@@ -17,13 +17,12 @@
 </head>
 <body>
 
-    <!-- ClippyJS -->
     <script src="https://s3.amazonaws.com/clippyjs/clippy.js"></script>
 
     <script>
         clippy.load('Clippy', function(agent) {
             agent.show();
-            agent.moveTo(300, 300); // posición inicial en pantalla
+            agent.moveTo(300, 300);
 
             setTimeout(() => {
                 agent.speak("¡Hola! Parece que estás intentando hacer una animación.");
