@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clippy Animado</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clippy Animado</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f0f0f0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
 <body>
-    <div id="clippy-container">
-        <img id="clippy" src="clippy.gif" alt="Clippy">
-        <div id="clippy-text"></div>
-    </div>
 
-    <script src="script.js"></script>
+<!-- Incluimos clippy.js desde CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clippy.js/0.0.3/clippy.min.js"></script>
+<script>
+  // Lista de mensajes que Clippy dirá
+  const mensajes = [
+    "¡Hola! Soy Clippy 😎",
+    "Puedo ayudarte con tu GitHub Pages.",
+    "No olvides guardar tus archivos.",
+    "¡Sigue aprendiendo y divirtiéndote!"
+  ];
+
+  clippy.load('Clippy', function(agent){
+      agent.show(); // Muestra Clippy
+      agent.moveTo(100, 300); // Posición inicial
+
+      let index = 0;
+
+      // Función para mostrar mensajes
+      function hablar() {
+        agent.speak(mensajes[index]);
+        index = (index + 1) % mensajes.length;
+      }
+
+      hablar(); // Primer mensaje
+
+      // Cada 4 segundos habla un mensaje nuevo
+      setInterval(hablar, 4000);
+
+      // Animación simple: Clippy se mueve un poco
+      setInterval(() => {
+        const x = Math.random() * (window.innerWidth - 200);
+        const y = Math.random() * (window.innerHeight - 200);
+        agent.moveTo(x, y);
+      }, 6000);
+  });
+</script>
+
 </body>
 </html>
