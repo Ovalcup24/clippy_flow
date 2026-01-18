@@ -2,46 +2,16 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ClippyJS Online</title>
-
-    <!-- ClippyJS CSS (versión compatible con HTML normal) -->
-    <link rel="stylesheet" href="https://s3.amazonaws.com/clippyjs/clippy.css">
-
-    <style>
-        body {
-            background: #00a135; /* fondo cian */
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clippy Animado</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="clippy-container">
+        <img id="clippy" src="clippy.gif" alt="Clippy">
+        <div id="clippy-text"></div>
+    </div>
 
-    <!-- ClippyJS JS (versión compatible con HTML normal) -->
-    <script src="https://s3.amazonaws.com/clippyjs/clippy.js"></script>
-
-    <script>
-        // Cargar Clippy
-        clippy.load('Clippy', function(agent) {
-            agent.show();
-            agent.moveTo(300, 300); // posición inicial en pantalla
-
-            setTimeout(() => {
-                agent.speak("¡Hola! Parece que estás intentando hacer una animación.");
-                agent.play('Greeting');
-            }, 500);
-
-            setTimeout(() => {
-                agent.speak("¿Necesitas ayuda?");
-                agent.play('Thinking');
-            }, 4000);
-
-            setTimeout(() => {
-                agent.speak("¡Yo puedo ayudarte a crear animaciones!");
-                agent.play('Writing');
-            }, 8000);
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
