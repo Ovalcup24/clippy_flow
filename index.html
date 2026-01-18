@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>ClippyJS Online</title>
 
-    <!-- ClippyJS CSS -->
+    <!-- ClippyJS CSS (versión compatible con HTML normal) -->
     <link rel="stylesheet" href="https://s3.amazonaws.com/clippyjs/clippy.css">
 
     <style>
         body {
-            background: #1e90ff; /* azul XP */
+            background: #00ffff; /* fondo cian */
             height: 100vh;
             margin: 0;
         }
@@ -17,12 +17,14 @@
 </head>
 <body>
 
+    <!-- ClippyJS JS (versión compatible con HTML normal) -->
     <script src="https://s3.amazonaws.com/clippyjs/clippy.js"></script>
 
     <script>
+        // Cargar Clippy
         clippy.load('Clippy', function(agent) {
             agent.show();
-            agent.moveTo(300, 300);
+            agent.moveTo(300, 300); // posición inicial en pantalla
 
             setTimeout(() => {
                 agent.speak("¡Hola! Parece que estás intentando hacer una animación.");
