@@ -5,11 +5,11 @@
     <title>ClippyJS Online</title>
 
     <!-- ClippyJS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/clippyjs@latest/clippy.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smore-inc/clippyjs@1.0.0/clippy.css">
 
     <style>
         body {
-            background: #008080; /* fondo clásico Windows XP */
+            background: #1e90ff; /* azul Windows XP */
             height: 100vh;
             margin: 0;
         }
@@ -18,26 +18,23 @@
 <body>
 
     <!-- ClippyJS -->
-    <script src="https://unpkg.com/clippyjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/gh/smore-inc/clippyjs@1.0.0/clippy.min.js"></script>
 
     <script>
-        // Cargar Clippy
         clippy.load('Clippy', function(agent) {
-            agent.show(); // Mostrar Clippy
+            agent.show();
+            agent.moveTo(300, 300); // posición en pantalla
 
-            // Texto inicial
-            agent.speak("¡Hola! Parece que estás intentando hacer una animación.");
+            setTimeout(() => {
+                agent.speak("¡Hola! Parece que estás intentando hacer una animación.");
+                agent.play('Greeting');
+            }, 500);
 
-            // Animación inicial
-            agent.play('Greeting');
-
-            // Texto adicional después de 4 segundos
             setTimeout(() => {
                 agent.speak("¿Necesitas ayuda?");
                 agent.play('Thinking');
             }, 4000);
 
-            // Otra animación más tarde
             setTimeout(() => {
                 agent.speak("¡Yo puedo ayudarte a crear animaciones!");
                 agent.play('Writing');
